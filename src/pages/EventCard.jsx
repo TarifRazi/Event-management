@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 
 const EventCard = ({ allEvents }) => {
-    const { category, image, details,id } = allEvents
+    const { category, image, details,id,price } = allEvents
     return (
         <div>
             <div className="card card-compact lg:w-96 bg-base-100 shadow-xl">

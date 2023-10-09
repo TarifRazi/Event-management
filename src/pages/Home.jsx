@@ -19,12 +19,16 @@ const Home = () => {
                     </div>
                 )}
             </Carousel>
-            <div className=" grid md:grid-cols-2 lg:grid-cols-3 gap-9 mt-20">
-                {
-                    allEvents.map(event => <EventCard
-                        key={event.id}
-                        allEvents={event}></EventCard>)
-                }
+            <div className="mt-20">
+                <h2 className="text-4xl font-custom"> Our services</h2>
+
+                <div className=" grid md:grid-cols-2 lg:grid-cols-3 gap-9 mt-5">
+                    {
+                        allEvents.map(event => <EventCard
+                            key={event.id}
+                            allEvents={event}></EventCard>)
+                    }
+                </div>
             </div>
         </div>
     );
