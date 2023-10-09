@@ -2,6 +2,7 @@ import { Link, NavLink } from "react-router-dom";
 import defaultUserImg from "../assets/user.png";
 import { useContext } from "react";
 import { AuthContext } from "../provider/AuthProvider";
+import { ToastContainer } from 'react-toastify';
 
 const Navbar = () => {
     const { user, logOut } = useContext(AuthContext);
@@ -22,6 +23,7 @@ const Navbar = () => {
 
     return (
         <div>
+            <ToastContainer/>
             <div className="navbar bg-base-100">
                 <div className="navbar-start">
                     <div className="dropdown">

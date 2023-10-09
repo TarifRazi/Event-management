@@ -1,7 +1,8 @@
 import { useContext } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../provider/AuthProvider";
-
+import { ToastContainer, toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 const Login = () => {
     const {logIn} = useContext(AuthContext)
@@ -9,7 +10,9 @@ const Login = () => {
     const navigate = useNavigate()
     console.log(location)
 
-    const handleLogin = e => {
+    const greetings = () => toast("Thanks for login...")
+
+    const handleLogin = e => { 
         e.preventDefault();
         console.log(e.currentTarget);
         const form = new FormData(e.currentTarget);
@@ -19,8 +22,10 @@ const Login = () => {
         logIn(email, password )
         .then(result => {
             console.log(result.user);
-
+            
+            {greetings()}
             navigate(location?.state ? location.state : '/')
+            
         }) 
         .catch(error =>{ 
             console.error(error);
@@ -34,6 +39,7 @@ const Login = () => {
                 <div className="text-center lg:text-left">
                     <h1 className="text-5xl font-bold">Login now!</h1>
                 </div>
+                
 
                 <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                     <form onSubmit={handleLogin} className="card-body">
