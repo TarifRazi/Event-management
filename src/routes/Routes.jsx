@@ -8,6 +8,7 @@ import PrivatRoute from "./PrivatRoute";
 import Bookings from "../pages/Bookings";
 import About from "../pages/About";
 import Contact from "../pages/Contact";
+import Event from "../../public/Events.json"
 
 const routes = createBrowserRouter([
     {
@@ -17,22 +18,22 @@ const routes = createBrowserRouter([
             {
                 path:'/',
                 element: <Home></Home>,
-                loader: () => fetch('../../public/Events.json')
+                loader: () => Event
             },
             {
                 path:'/allEvents/:id',
                 element: <PrivatRoute><EventDetails></EventDetails></PrivatRoute>,
-                loader: () => fetch('../../public/Events.json')
+                loader: () => Event
             },
             {
                 path:'/about',
                 element: <PrivatRoute><About></About></PrivatRoute>,
-                loader: () => fetch('../../public/Events.json')
+                loader: () => Event
             },
             {
                 path:'/bookings',
                 element: <PrivatRoute><Bookings></Bookings></PrivatRoute>,
-                loader: () => fetch('../../public/Events.json')
+                loader: () => Event
             },
             {
                 path:'/contact',

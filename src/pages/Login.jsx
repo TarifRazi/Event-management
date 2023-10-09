@@ -5,6 +5,7 @@ import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 
 const Login = () => {
+
     const {logIn} = useContext(AuthContext)
     const location = useLocation()
     const navigate = useNavigate()

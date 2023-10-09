@@ -12,6 +12,7 @@ const Home = () => {
 
     return (
         <div>
+            <h1 className="text-5xl my-5 text-center font-custom font-bold">Greetings..</h1>
             <Carousel showThumbs={false}>
                 {allEvents.map(item =>
                     <div key={item.id}>
